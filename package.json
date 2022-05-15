@@ -1,0 +1,49 @@
+{
+  "name": "equipment-monitoring",
+  "version": "1.0.0",
+  "description": "Monitoring Biomedical equipment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "dev-app": "cross-env NODE_ENV=development nodemon app",
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "concurrently \"npm run sass:start\" \"npm run dev-app\"",
+    "sass-build": "node-sass --omit-source-map-url assets/sass/app.scss public/css/styles.css",
+    "sass-watch": "npm run sass-build -- --watch",
+    "sass:start": "npm run sass-watch"
+  },
+  "keywords": [
+    "equipment",
+    "biomedical"
+  ],
+  "author": "Harold & Armel",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongo": "^4.6.0",
+    "cookie-parser": "^1.4.4",
+    "cross-env": "^7.0.3",
+    "debug": "^2.6.9",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.3",
+    "http-errors": "^1.6.3",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.3",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.4",
+    "bulma-checkbox": "^1.1.1",
+    "bulma-radio": "^1.1.1",
+    "bulma-responsive-tables": "^1.2.3",
+    "bulma-switch-control": "^1.1.1",
+    "bulma-upload-control": "^1.2.0",
+    "concurrently": "^7.2.0",
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.16"
+  }
+}
