@@ -9,6 +9,11 @@
               </ul>
             </div>
           </div>
+          <div class="level-right pr-6">
+            <div class="level-item">
+              <a class="button is-primary" href="/equip/create">Ajouter</a>
+            </div>
+          </div>
           <!--<div class="level-right">
             <div class="level-item">
               <div class="buttons is-right">
@@ -35,22 +40,24 @@
           </div>
         </div>
         </section>-->
-        <section class="section is-main-section">
-        <!--<div class="notification is-info">
+        <section class="section is-main-section pl-1 pr-2">
+        <% if (success) {%>  
+        <div class="notification is-info ">
           <div class="level">
             <div class="level-left">
               <div class="level-item">
                 <div>
                   <span class="icon"><i class="mdi mdi-buffer default"></i></span>
-                  <b>Responsive table</b>
+                  <b>Un equipement ajouté</b>
                 </div>
               </div>
             </div>
             <div class="level-right">
-              <button type="button" class="button is-small is-white jb-notification-dismiss">Dismiss</button>
+              <button type="button" class="button is-small is-white jb-notification-dismiss">Fermer</button>
             </div>
           </div>
-        </div>-->
+        </div>
+        <% } %>
         <div class="card has-table">
           <header class="card-header">
             <p class="card-header-title">
@@ -67,39 +74,54 @@
                 <table class="table is-fullwidth is-striped is-hoverable is-fullwidth">
                   <thead>
                   <tr>
-                    <th class="is-checkbox-cell">
+                    <!--<th class="is-checkbox-cell">
                       <label class="b-checkbox checkbox">
                         <input type="checkbox" value="false">
                         <span class="check"></span>
                       </label>
-                    </th>
+                    </th>-->
                     
                     <th>Designation</th>
-                    <th>Type</th>
+                    <th>Modele</th>
                     <th>N° Serie</th>
                     <th>V/W/A</th>
-                    <th>Created</th>
-                    <th></th>
+                    <th>Fabrique le</th>
+                    <th>Fabricant</th>
+                    <th>Pays</th>
+                    <th>fournisseur</th>
+                    <th>En service</th>
+                    <th>Service</th>
+                    <th>Code</th>
+                    <th>Actions</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <% equips.forEach(function(equip){ %>
                   <tr>
-                    <td class="is-checkbox-cell">
+                    <!--<td class="is-checkbox-cell">
                       <label class="b-checkbox checkbox">
                         <input type="checkbox" value="false">
                         <span class="check"></span>
                       </label>
-                    </td>
+                    </td>-->
                     
-                    <td data-label="Name">Rebecca Bauch</td>
-                    <td data-label="Company">Daugherty-Daniel</td>
-                    <td data-label="City">South Cory</td>
-                    <td data-label="Progress" class="is-progress-cell">
-                      <progress max="100" class="progress is-small is-primary" value="79">79</progress>
+                    <td data-label="Name"> <%= equip.designation %></td>
+                    <td data-label="Company"><%= equip.model %></td>
+                    <td data-label="City"><%= equip.serie %></td>
+                    <td data-label="Progress">
+                      <%= equip.voltage + "/" + equip.intensity + "/" + equip.power %>
+                      <!--<progress max="100" class="progress is-small is-primary" value="79">79</progress>-->
                     </td>
-                    <td data-label="Created">
+                    <td data-label="Company"><small><%= (new Date(equip.dateFact)).toLocaleDateString() %></small></td>
+                    <td data-label="City"><%= equip.factory %></td>
+                    <td data-label="Company"><%= equip.country %></td>
+                    <td data-label="City"><%= equip.provider %></td>
+                    <td data-label="City"><%= (new Date(equip.functionAt)).toLocaleDateString() %></td>
+                    <td data-label="City"><%= equip.department %></td>
+                    <td data-label="City"><%= equip.code %></td>
+                    <!--<td data-label="Created">
                       <small class="has-text-grey is-abbr-like" title="Oct 25, 2020">Oct 25, 2020</small>
-                    </td>
+                    </td>-->
                     <td class="is-actions-cell">
                       <div class="buttons is-right">
                         <button class="button is-small is-primary" type="button">
@@ -111,7 +133,8 @@
                       </div>
                     </td>
                   </tr>
-                  <tr>
+                  <% });%>
+                  <!--<tr>
                     <td class="is-checkbox-cell">
                       <label class="b-checkbox checkbox">
                         <input type="checkbox" value="false">
@@ -361,7 +384,7 @@
                         </button>
                       </div>
                     </td>
-                  </tr>
+                  </tr>-->
                   </tbody>
                 </table>
               </div>

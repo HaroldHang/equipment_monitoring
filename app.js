@@ -9,16 +9,19 @@ dotenv.config({
 })
 const port = process.env.PORT || 5000
 const app = express();
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
 if (process.env.NODE_ENV == "development") {
     app.use(morgan('dev'))
 }
-//connectDB()
+connectDB();
 app.set('view engine', 'ejs')
 /*app.get('/', (req, res) => {
     res.render('index')
 })*/
 
 app.use('/', require('./routes/index'))
+app.use('/equip', require('./routes/equip'))
 
 app.use(express.static(path.join(__dirname, 'public')))
 

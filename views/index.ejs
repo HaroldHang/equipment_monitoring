@@ -17,7 +17,11 @@
             <%- include('_partial/_aside.ejs') -%>
         </div>
         <div class="content-custom">
-            <%- include('_includes/_equipements.ejs') -%>
+            <% if (page == "index") {%>
+                <%- include('_includes/_equipements.ejs', {equips : equipements}); -%>
+            <% } else if(page == "create") {%>
+                <%- include('_includes/equip/create.ejs'); -%>
+            <% } %>
             <%- include('_partial/_header.ejs') -%>
             <%- include('_partial/_footer.ejs') -%>
         </div>

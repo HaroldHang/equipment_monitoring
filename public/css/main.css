@@ -5,25 +5,26 @@ body {
 #app {
     width : 100vw;
     height : 100vh;
-    /* background-color : #f1f1f1 */
+    
     position: relative;
 }
 .new-aside {
     max-width : 14rem
 }
 .content-custom {
-    width : calc(100vw - 16rem);
+    width : calc(100vw - 14rem);
     position : absolute;
     right: 0px;
-    /* outline: 2px solid red; */
+    
 }
 
-.equip-content {
+.equip-content, .create-container {
     margin-top : 3rem;
     width: 100%;
 }
 @media screen and (min-width : 1024px) {
     #sidebar {
         display: block;
+        width: 200px;
     }
 }
