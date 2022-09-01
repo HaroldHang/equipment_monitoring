@@ -55,11 +55,13 @@ const equipScheme = new mongoose.Schema({
     code : {
         type : Number
     },
-    createdAt : {
+    /*createdAt : {
         type : Date,
         default : Date.now
-    }
+    }*/
 
+}, {
+    timestamps : true
 })
 
 module.exports = mongoose.model('Equipment', equipScheme)
