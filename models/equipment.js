@@ -53,7 +53,7 @@ const equipScheme = new mongoose.Schema({
         required : true
     },
     code : {
-        type : Number
+        type : String
     },
     /*createdAt : {
         type : Date,
