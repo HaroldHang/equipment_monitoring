@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const Schema = mongoose.Schema;
 const equipScheme = new mongoose.Schema({
     designation : {
         type : String,
@@ -49,7 +49,13 @@ const equipScheme = new mongoose.Schema({
         default : null
     },
     department : {
-        type : String,
+        type : Schema.Types.ObjectId,
+        ref : 'Services',
+        required : true
+    },
+    departmentDivision : {
+        type : Schema.Types.ObjectId,
+        ref : 'Divisions',
         required : true
     },
     code : {

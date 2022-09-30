@@ -51,7 +51,7 @@ exports.create = (req, res) => {
     });
 };*/
 exports.findAll = (req, res) => {
-    Equipments.find().sort({ "createdAt" : -1 })
+    Equipments.find().populate("departmentDivision").sort({ "createdAt" : -1 })
     .then(equipments => {
         res.send(equipments);
     }).catch(err => {

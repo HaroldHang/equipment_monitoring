@@ -35,6 +35,7 @@ app.use('/equipments', require('./routes/equip'))
 app.use('/technicians', require('./routes/technic'))
 app.use('/corrective', require('./routes/correctiv'))
 app.use('/preventive', require('./routes/prevent'))
+app.use('/services', require('./routes/service'))
 
 //app.use(express.static(path.join(__dirname, 'public')))
 
