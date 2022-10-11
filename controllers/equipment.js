@@ -3,6 +3,7 @@ const Equipments = require('../models/equipment.js');
 //Create new Product
 exports.create = (req, res) => {
     // Request validation
+    console.log(req.body)
     if(!req.body) {
         return res.status(400).send({
             message: "Equipment content can not be empty"

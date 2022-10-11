@@ -7,46 +7,53 @@ const equipScheme = new mongoose.Schema({
     },
     model : {
         type : String,
-        required : true
+        required : true,
+        default : "null"
     },
     serie : {
         type : String,
-        required : true
+        required : true,
+        default : "null"
+
     },
     voltage : {
         type : Number,
-        required : true
+        required : true,
+        default : 0
     },
     intensity : {
         type : Number,
-        required : true
+        required : true,
+        default : 0
     },
     power : {
         type : Number,
-        required : true
+        required : true,
+        default : 0
     },
     dateFact : {
         type : Date,
-        required : true
+        required : true,
+        default : Date.now()
     },
     factory : {
         type : String,
         //required : true,
-        default : null
+        default : "null"
     },
     country : {
         type : String,
         //required : true,
-        default : null
+        default : "null"
     },
     provider : {
         type : String,
         //required : true,
-        default : null
+        default : "null"
     },
     functionAt : {
         type : Date,
-        default : null
+        default : Date.now()
     },
     department : {
         type : Schema.Types.ObjectId,
@@ -59,7 +66,8 @@ const equipScheme = new mongoose.Schema({
         required : true
     },
     code : {
-        type : String
+        type : String,
+        default : null
     },
     /*createdAt : {
         type : Date,
